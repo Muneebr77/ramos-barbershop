@@ -1,0 +1,244 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Fades beard trims and hot towel shaves on East 6th St in Austin TX Book online"><title>Ramos Barbershop</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Lato:wght@400;700&display=swap">
+<style>
+/* layout: chava-cuts style GHL barber site, full screen video hero with centered logo, alternating cream and black bands, dark service cards */
+:root{
+ --black:#172033;--card:#ffffff;--cream:#f6f5f2;--ink:#1b2333;--grey:#5d6574;--line:#e3e1dc;
+ --amber:#b8242c;--amber2:#d63a42;--white:#ffffff;--ok:#2f9e5a;
+ --display:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+ --body:'Lato',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+ color-scheme:light}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--black)}
+a{color:inherit}
+.wrap{max-width:1140px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:-.01em;line-height:1.05;margin:0;text-wrap:balance}
+.eyebrow{font-family:var(--body);font-weight:700;font-size:15px;color:#e8c9a0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 28px;border-radius:6px;font:600 16px var(--display);text-decoration:none;border:2px solid var(--white);cursor:pointer;transition:background .2s,color .2s}
+.btn.fill{background:var(--amber);border-color:var(--amber);color:var(--white)}
+.btn.fill:hover{background:var(--amber2);border-color:var(--amber2)}
+.btn.ghost{background:rgba(0,0,0,.25);color:var(--white)}
+.btn.ghost:hover{background:var(--white);color:var(--black)}
+.btn:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--amber2);outline-offset:3px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--black)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:70px;gap:16px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--white);font:600 20px var(--display)}
+.badge{width:44px;height:44px;border-radius:50%;border:2px solid #fff;display:grid;place-items:center;font:600 18px var(--display);color:#fff;background:var(--amber);line-height:1}
+.navlinks{display:flex;gap:30px;font:500 15px var(--display);color:#cfd5e2}
+.navlinks a{text-decoration:none}.navlinks a:hover{color:var(--amber2)}
+nav .btn{padding:9px 20px;font-size:16px}
+.hero{position:relative;overflow:hidden;min-height:620px;display:grid;place-items:center;text-align:center;background:var(--black);color:var(--white)}
+.hero .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(16,22,36,.45),rgba(16,22,36,.7))}
+.hero .wrap{position:relative;z-index:2;padding-block:90px;display:flex;flex-direction:column;align-items:center}
+.hero .badge{display:none}
+.hero h1{font-size:clamp(40px,6vw,68px);color:var(--white)}
+.hero h1 em{font-style:normal;color:#fff}
+.hero p.lead{max-width:560px;font-size:17px;color:#ece7de;margin:16px 0 28px}
+.cta{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+.facts{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:center;margin-top:30px;font-size:14px;color:#d9d4cb}
+.facts span::before{content:"✓";color:#fff;margin-right:7px;font-weight:700}
+section{padding-block:84px}
+.sec-head{text-align:center;max-width:640px;margin:0 auto 44px}
+.sec-head h2{font-size:clamp(34px,4.6vw,48px);color:var(--ink)}
+.sec-head p{color:var(--grey);margin:12px 0 0}
+.dark{background:var(--black);color:var(--white)}
+.dark .sec-head h2{color:var(--white)}.dark .sec-head p{color:#b9c1d1}
+.menu{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.item{background:var(--card);color:var(--ink);border:1px solid var(--line);box-shadow:0 8px 24px rgba(23,32,51,.06);border-radius:14px;padding:18px 18px 22px;display:flex;flex-direction:column;gap:10px;cursor:pointer;transition:transform .2s}
+.item:hover{transform:translateY(-4px)}
+.item img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px}
+.item .row{display:flex;justify-content:space-between;align-items:baseline;gap:10px;border-bottom:1px solid var(--line);padding-bottom:10px}
+.item h3{font-size:20px;color:var(--ink)}
+.item .price{font:600 20px var(--display);color:var(--amber)}
+.item p{margin:0;color:var(--grey);font-size:14.5px}
+.item .dur{display:block;color:#8b919c;font-size:13px;margin-top:4px}
+.item .more{margin-top:auto;background:var(--black);color:var(--white);border-radius:6px;padding:10px;text-align:center;font:600 15px var(--display)}
+.bk{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:26px}
+.card{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:26px;box-shadow:0 10px 30px rgba(40,30,10,.06)}
+.step{font:600 16px var(--display);color:var(--ink);margin:0 0 10px}
+.chips{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:22px}
+.chip{border:1.5px solid var(--line);background:var(--white);color:var(--ink);border-radius:6px;padding:9px 15px;font:600 14.5px var(--body);cursor:pointer}
+.chip:hover{border-color:var(--amber)}
+.chip[aria-pressed="true"]{background:var(--black);color:var(--white);border-color:var(--black)}
+.chip.day{display:flex;flex-direction:column;align-items:center;min-width:62px;line-height:1.25}
+.chip.day b{font-size:19px}
+.chip.day small{font-size:11.5px;opacity:.75}
+.chip:disabled{opacity:.35;cursor:not-allowed;text-decoration:line-through}
+.fields{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;margin-bottom:18px}
+label{display:block;font-size:13px;color:var(--grey);margin-bottom:6px;font-weight:600}
+input{width:100%;background:var(--cream);border:1.5px solid var(--line);border-radius:6px;color:var(--ink);padding:12px 13px;font:15px var(--body)}
+.summary{display:flex;flex-direction:column;gap:18px}
+.sum-row{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding-bottom:11px;font-size:15px}
+.sum-row span:first-child{color:var(--grey)}
+.sum-row b{text-align:right}
+.total{font:600 30px var(--display);color:var(--amber)}
+.note{font-size:12.5px;color:var(--grey);margin:0}
+#bookBtn{width:100%}
+#bookBtn:disabled{opacity:.45;cursor:not-allowed}
+.phone{border-radius:26px;background:#f2f2f6;border:8px solid #111;padding:14px;min-height:280px;display:flex;flex-direction:column;gap:10px}
+.ph-top{display:flex;justify-content:center;font-size:12px;color:#777;font-weight:600}
+.sms{align-self:flex-start;max-width:88%;background:#e5e5ea;color:#111;border-radius:18px 18px 18px 5px;padding:10px 13px;font-size:14px;line-height:1.4;opacity:0;transform:translateY(8px);transition:all .45s}
+.sms.show{opacity:1;transform:none}
+.sms .t{display:block;font-size:11px;color:#8a8a8f;margin-bottom:3px}
+.ph-empty{color:#8a8a8f;font-size:14px;margin:auto;text-align:center;max-width:220px}
+.gal{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:220px;gap:10px;grid-auto-flow:dense}
+.gal figure{margin:0;overflow:hidden;border-radius:10px}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.gal figure:hover img{transform:scale(1.05)}
+.gal .tall{grid-row:span 2}.gal .wide{grid-column:span 2}
+.flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.fl{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:22px;color:var(--white)}
+.fl .when{font:700 14px var(--body);color:#f2a7ab}
+.fl h3{font-size:21px;margin:6px 0 8px;color:var(--white)}
+.fl p{margin:0;color:#cfc9be;font-size:14.5px}
+.visit{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:30px;align-items:start}
+.hours{width:100%;border-collapse:collapse;font-size:15.5px;background:var(--white);border-radius:14px;overflow:hidden}
+.hours td{padding:13px 18px;border-bottom:1px solid var(--line)}
+.hours td:last-child{text-align:right;font-variant-numeric:tabular-nums}
+.hours tr.today td{color:var(--amber);font-weight:700}
+.addr{font:600 30px var(--display);line-height:1.15}
+footer{background:var(--black);color:#a39c90;padding-block:28px;font-size:13.5px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.mbar{display:none}
+@media (max-width:900px){.menu{grid-template-columns:repeat(2,minmax(0,1fr))}.flow{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:760px){
+ .navlinks{display:none}
+ nav .btn{display:none}
+ .item img{aspect-ratio:16/9}
+ .menu,.bk,.visit{grid-template-columns:minmax(0,1fr)}
+ .gal{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:160px}
+ section{padding-block:60px}
+ .hero{min-height:600px}
+ .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:55;padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));background:var(--black)}
+ .mbar .btn{width:100%}
+ footer{padding-bottom:100px}
+}
+@media (max-width:480px){.fields,.flow{grid-template-columns:minmax(0,1fr)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style></head><body>
+
+<nav><div class="wrap">
+ <a class="logo" href="#top"><span class="badge">R</span>Ramos Barbershop</a>
+ <div class="navlinks"><a href="#services">Services</a><a href="#book">Book</a><a href="#work">Work</a><a href="#visit">Visit</a></div>
+ <a class="btn fill" href="#book">Book a chair</a>
+</div></nav>
+
+<header class="hero" id="top">
+ <video class="bg" autoplay muted loop playsinline poster="assets/poster.jpg" src="assets/hero.mp4" aria-label="Barbers cutting hair inside the shop"></video>
+ <div class="wrap">
+  <div class="eyebrow">East Austin since 2019</div>
+  <h1>Good cuts no wait</h1>
+  <p class="lead">Fades beard trims and hot towel shaves on East 6th St<br>Book online and your chair is ready when you get here</p>
+  <div class="cta"><a class="btn fill" href="#book">Book your cut</a><a class="btn ghost" href="#services">See prices</a></div>
+  <div class="facts"><span>Walk ins welcome</span><span>Book online any time</span><span>Text reminders</span></div>
+ </div>
+</header>
+
+<section id="services" class="dark"><div class="wrap">
+ <div class="sec-head"><h2>Services and prices</h2><p>Every cut comes with a hot towel and a line up</p></div>
+ <div class="menu" id="menu"></div>
+</div></section>
+
+<section id="book"><div class="wrap">
+ <div class="sec-head"><h2>Book your cut</h2><p>Takes about 30 seconds no calling around</p></div>
+ <div class="bk">
+  <form class="card" id="bkForm" novalidate>
+   <p class="step">Service</p><div class="chips" id="svcChips"></div>
+   <p class="step">Barber</p><div class="chips" id="barbChips"></div>
+   <p class="step">Day</p><div class="chips" id="dayChips"></div>
+   <p class="step">Time</p><div class="chips" id="timeChips"></div>
+   <div class="fields">
+    <div><label for="nm">Your name</label><input id="nm" autocomplete="off" value="Marcus"></div>
+    <div><label for="ph">Mobile number</label><input id="ph" inputmode="tel" autocomplete="off" value="(512) 555-0148"></div>
+   </div>
+   <button class="btn fill" id="bookBtn" type="submit">Confirm booking</button>
+   <p class="note" style="margin-top:12px">Concept demo nothing is sent or saved</p>
+  </form>
+  <div class="summary">
+   <div class="card">
+    <div class="sum-row"><span>Service</span><b id="sSvc">-</b></div>
+    <div class="sum-row"><span>Barber</span><b id="sBarb">-</b></div>
+    <div class="sum-row"><span>When</span><b id="sWhen">-</b></div>
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:12px;margin-top:6px"><span style="color:var(--grey)">Total</span><span class="total" id="sTot">$0</span></div>
+   </div>
+   <div class="phone" aria-live="polite">
+    <div class="ph-top"><span>Ramos Barbershop</span></div>
+    <div class="ph-empty" id="phEmpty">Book a time and watch the texts your customer gets</div>
+    <div class="sms" id="m1"><span class="t">just now</span><span id="m1t"></span></div>
+    <div class="sms" id="m2"><span class="t">2 hours before</span><span id="m2t"></span></div>
+    <div class="sms" id="m3"><span class="t">after your cut</span><span id="m3t"></span></div>
+   </div>
+  </div>
+ </div>
+</div></section>
+
+<section id="work"><div class="wrap">
+ <div class="sec-head"><h2>Recent work</h2><p>Fades tapers beards and razor shaves</p></div>
+ <div class="gal"><figure><img src="assets/v1.jpg" alt="Fade with clippers from behind" loading="lazy"></figure><figure><img src="assets/v3.jpg" alt="Fresh skin fade" loading="lazy"></figure><figure><img src="assets/v4.jpg" alt="Scissor over comb" loading="lazy"></figure><figure><img src="assets/v5.jpg" alt="Client in the chair" loading="lazy"></figure><figure><img src="assets/v6.jpg" alt="Barber finishing a cut" loading="lazy"></figure><figure><img src="assets/v7.jpg" alt="Line up with trimmers" loading="lazy"></figure><figure><img src="assets/v8.jpg" alt="Barber at his station" loading="lazy"></figure><figure><img src="assets/v9.jpg" alt="Clippers guards and scissors" loading="lazy"></figure></div>
+</div></section>
+
+<section class="dark"><div class="wrap">
+ <div class="sec-head"><h2>After you book</h2><p>You get a text right away and a reminder before your cut</p></div>
+ <div class="flow">
+  <div class="fl"><div class="when">Instant</div><h3>Booked</h3><p>Pick a time online and it goes straight into the barber's schedule</p></div>
+  <div class="fl"><div class="when">Seconds later</div><h3>Confirmed</h3><p>You get a text with your time barber and the address</p></div>
+  <div class="fl"><div class="when">2 hrs before</div><h3>Reminded</h3><p>A quick heads up before your cut reply if you need to move it</p></div>
+  <div class="fl"><div class="when">After the cut</div><h3>Reviewed</h3><p>A thank you text and a review link if you liked the cut</p></div>
+ </div>
+</div></section>
+
+<section id="visit"><div class="wrap visit">
+ <div>
+  <div class="eyebrow" style="color:var(--amber)">Come see us</div>
+  <p class="addr" style="margin:14px 0 10px">1418 E 6th St<br>Austin TX</p>
+  <p style="color:var(--grey);margin:0 0 22px">Street parking on 6th walk ins welcome when a chair is open</p>
+  <a class="btn fill" href="#book">Book a chair</a>
+ </div>
+ <table class="hours" id="hours"><tbody></tbody></table>
+</div></section>
+
+<footer><div class="wrap"><span>Ramos Barbershop is a concept site Photos from Unsplash</span><span>Concept site designed by Olyraax</span></div></footer>
+<div class="mbar"><a class="btn fill" href="#book">Book a chair</a></div>
+
+<script>
+const SVC=[["The Fade","45 min",40,"Skin low mid or high fade with a scissor top"],["Classic Cut","40 min",35,"Scissor or clipper cut wash and style"],["Beard Sculpt","30 min",25,"Shape line up and hot towel with oil"],["Cut + Beard","70 min",60,"The fade or classic cut plus a full beard sculpt"],["Hot Towel Shave","35 min",35,"Straight razor shave with two hot towels"],["Line Up","20 min",15,"Edge up and neck clean up between cuts"]];
+const BARB=["Andre","Luis","Any barber"];
+const $=id=>document.getElementById(id);
+const SIMG=['assets/g5.jpg','assets/g7.jpg','assets/g2.jpg','assets/g6.jpg','assets/g1.jpg','assets/v2.jpg'];
+$('menu').innerHTML=SVC.map((s,i)=>`<div class="item" tabindex="0" data-i="${i}"><img src="${SIMG[i]}" alt="${s[0]}"><div class="row"><h3>${s[0]}</h3><span class="price">$${s[2]}</span></div><p>${s[3]}<span class="dur">${s[1]}</span></p><span class="more">Book this</span></div>`).join('');
+const st={svc:0,barb:0,day:0,time:null};
+const days=[];{const d=new Date();for(let i=0;i<6;i++){const x=new Date(d);x.setDate(d.getDate()+i);days.push(x)}}
+const DN=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],MN=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const TIMES=['10:00 am','11:30 am','1:00 pm','2:30 pm','4:00 pm','5:30 pm','7:00 pm'];
+function taken(di,ti){return ((di*3+ti*5+st.barb)%4)===0}
+function chips(el,arr,key,fmt){el.innerHTML='';arr.forEach((v,i)=>{const b=document.createElement('button');b.type='button';b.className='chip'+(key==='day'?' day':'');b.innerHTML=fmt(v,i);b.setAttribute('aria-pressed',st[key]===i);if(key==='time'&&taken(st.day,i))b.disabled=true;b.onclick=()=>{st[key]=i;if(key!=='time'&&key!=='svc'&&key!=='barb')st.time=null;if(key==='barb')st.time=null;render()};el.appendChild(b)})}
+function render(){
+ chips($('svcChips'),SVC,'svc',s=>s[0]);chips($('barbChips'),BARB,'barb',b=>b);
+ chips($('dayChips'),days,'day',(d,i)=>`<small>${i===0?'Today':DN[d.getDay()]}</small><b>${d.getDate()}</b><small>${MN[d.getMonth()]}</small>`);
+ chips($('timeChips'),TIMES,'time',t=>t);
+ const s=SVC[st.svc];$('sSvc').textContent=s[0]+' '+s[1];$('sBarb').textContent=BARB[st.barb];
+ const d=days[st.day];$('sWhen').textContent=(st.day===0?'Today':DN[d.getDay()]+' '+MN[d.getMonth()]+' '+d.getDate())+(st.time!==null?' at '+TIMES[st.time]:' pick a time');
+ $('sTot').textContent='$'+s[2];$('bookBtn').disabled=st.time===null;
+}
+document.querySelectorAll('.item').forEach(it=>{const go=()=>{st.svc=+it.dataset.i;render();location.hash='book'};it.onclick=go;it.onkeydown=e=>{if(e.key==='Enter')go()}});
+let timers=[];
+$('bkForm').addEventListener('submit',e=>{e.preventDefault();if(st.time===null)return;timers.forEach(clearTimeout);
+ const n=($('nm').value||'there').trim().split(' ')[0],s=SVC[st.svc],d=days[st.day],when=(st.day===0?'today':DN[d.getDay()]+' '+MN[d.getMonth()]+' '+d.getDate())+' at '+TIMES[st.time],barb=st.barb===2?'your barber':BARB[st.barb];
+ $('m1t').textContent=`Ramos Barbershop: you're all set ${n} ${s[0]} with ${barb} ${when} at 1418 E 6th St reply C to cancel`;
+ $('m2t').textContent=`Hey ${n} quick reminder you're in the chair at ${TIMES[st.time]} see you soon`;
+ $('m3t').textContent=`Thanks for coming in ${n} if you liked the cut a quick Google review helps us out a lot`;
+ $('phEmpty').hidden=true;['m1','m2','m3'].forEach(id=>$(id).classList.remove('show'));
+ ['m1','m2','m3'].forEach((id,i)=>timers.push(setTimeout(()=>$(id).classList.add('show'),300+i*1100)));
+ $('bookBtn').textContent='Booked ✓';setTimeout(()=>$('bookBtn').textContent='Confirm booking',2400);
+});
+st.time=2;render();
+const H=[['Monday','10 am – 8 pm'],['Tuesday','10 am – 8 pm'],['Wednesday','10 am – 8 pm'],['Thursday','10 am – 8 pm'],['Friday','9 am – 9 pm'],['Saturday','9 am – 6 pm'],['Sunday','11 am – 4 pm']];
+const td=(new Date().getDay()+6)%7;$('hours').querySelector('tbody').innerHTML=H.map((h,i)=>`<tr class="${i===td?'today':''}"><td>${h[0]}${i===td?' (today)':''}</td><td>${h[1]}</td></tr>`).join('');
+</script>
+
+</body></html>
